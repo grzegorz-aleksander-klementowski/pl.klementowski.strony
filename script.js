@@ -1,7 +1,32 @@
 (function () {
     "use strict";
 
-    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var heroLanding = document.querySelector(".hero-landing");
+    var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var launchHero = function () {
+        if (!heroLanding) {
+            return;
+        }
+        heroLanding.classList.add("play");
+        heroLanding.classList.remove("prepare");
+    };
+
+    if (heroLanding) {
+        if (prefersReduced) {
+            heroLanding.classList.remove("prepare");
+        } else {
+            if (document.readyState === "complete") {
+                requestAnimationFrame(launchHero);
+            } else {
+                window.addEventListener("load", function () {
+                    requestAnimationFrame(launchHero);
+                });
+            }
+        }
+    }
+
+    if (prefersReduced) {
         document.querySelectorAll("[data-animate]").forEach(function (node) {
             node.classList.add("is-visible");
         });

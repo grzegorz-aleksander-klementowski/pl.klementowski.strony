@@ -6,6 +6,24 @@
     <title>Strzezymir Klementowski - Strony dla lokalnego biznesu</title>
     <meta name="description" content="Strzezymir Klementowski tworzy strony, ktore przyciagaja klientow na Dolnym Slasku i w calej Polsce. Prosto, szybko, z pelna opieka i niskimi kosztami utrzymania.">
     <link rel="stylesheet" href="styles.css">
+	<noscript>
+		<style>
+			.hero-landing.prepare,
+			.hero-landing.prepare .sequence-panel,
+			.hero-landing.prepare .wireframe-block,
+			.hero-landing.prepare .code-line,
+			.hero-landing.prepare .launch-card,
+			.hero-landing.prepare .hero-landing-content,
+			.hero-landing.prepare .hero-tag,
+			.hero-landing.prepare h1,
+			.hero-landing.prepare .hero-landing-content p,
+			.hero-landing.prepare .hero-buttons,
+			.hero-landing.prepare .hero-scroll {
+				opacity: 1 !important;
+				transform: none !important;
+			}
+		</style>
+	</noscript>
 </head>
 <body>
     <header class="site-header" data-animate="reveal">
@@ -16,25 +34,90 @@
                 <span class="brand-role">strony dla firm z Dolnego Slaska i calej Polski</span>
             </div>
         </div>
-        <nav class="site-nav">
-            <a href="#promise">Co zyskasz</a>
-            <a href="#offer">Co zalatwie</a>
-            <a href="#packages">Pakiety</a>
-            <a href="#process">Jak wyglada wspolpraca</a>
-            <a href="#tech">Zaplecze techniczne</a>
-            <a href="#contact" class="cta">Kontakt</a>
-        </nav>
+		<nav class="site-nav">
+			<a href="#start">Start</a>
+			<a href="#promise">Co zyskasz</a>
+			<a href="#offer">Co zalatwie</a>
+			<a href="#packages">Pakiety</a>
+			<a href="#process">Jak wyglada wspolpraca</a>
+			<a href="#tech">Zaplecze techniczne</a>
+			<a href="#contact" class="cta">Kontakt</a>
+		</nav>
     </header>
 
     <main>
-        <section class="hero" data-animate="hero">
+		<section class="hero-landing prepare" id="start">
+			<div class="hero-landing-background" aria-hidden="true">
+				<span class="hero-glow glow-a"></span>
+				<span class="hero-glow glow-b"></span>
+				<div class="hero-grid"></div>
+			</div>
+			<div class="hero-landing-inner">
+				<div class="hero-sequence" aria-hidden="true">
+					<div class="sequence-panel sequence-wireframe">
+						<span class="sequence-label">Plan</span>
+						<div class="wireframe-canvas">
+							<span class="wireframe-block block-1"></span>
+							<span class="wireframe-block block-2"></span>
+							<span class="wireframe-block block-3"></span>
+							<span class="wireframe-block block-4"></span>
+							<span class="wireframe-block block-5"></span>
+						</div>
+					</div>
+					<div class="sequence-panel sequence-code">
+						<span class="sequence-label">Kod</span>
+						<div class="code-window">
+							<div class="code-header">
+								<span class="code-dot dot-1"></span>
+								<span class="code-dot dot-2"></span>
+								<span class="code-dot dot-3"></span>
+							</div>
+							<pre class="code-lines">
+								<span class="code-line">const project = buildWebsite({</span>
+								<span class="code-line">	strategy: 'lokalna przewaga',</span>
+								<span class="code-line">	design: 'premium',</span>
+								<span class="code-line">	performance: 98,</span>
+								<span class="code-line">	launch: '14 dni'</span>
+								<span class="code-line">});</span>
+							</pre>
+						</div>
+					</div>
+					<div class="sequence-panel sequence-launch">
+						<span class="sequence-label">Start</span>
+						<div class="launch-grid">
+							<div class="launch-card launch-main">
+								<span class="launch-title">Wydajnosc</span>
+								<strong>98/100</strong>
+							</div>
+							<div class="launch-card">SEO gotowe</div>
+							<div class="launch-card">Analiza leadow</div>
+							<div class="launch-card">Hosting 70 zl</div>
+						</div>
+					</div>
+				</div>
+				<div class="hero-landing-content">
+					<span class="hero-tag">Dolny Slask -> Cala Polska</span>
+					<h1>Zbuduj ze mna strone, ktora dziala, wyglada i sprzedaje.</h1>
+					<p>Pokazuje mozliwosci na start: strategia, projekt, kod i wdrozenie. Ty dostajesz gotowa strone, ktora zarabia i kosztuje mniej w utrzymaniu.</p>
+					<div class="hero-buttons">
+						<a class="button primary" href="#contact">Zamow projekt</a>
+						<a class="button ghost" href="#packages">Zobacz pakiety</a>
+					</div>
+				</div>
+			</div>
+			<div class="hero-scroll">
+				<span class="hero-scroll-text">Przewin i zobacz plan dzialania</span>
+				<span class="hero-scroll-icon"></span>
+			</div>
+		</section>
+        <section class="hero hero-secondary" id="offer-intro" data-animate="hero">
 			<div class="hero-backdrop" aria-hidden="true">
 				<span class="flare flare-1"></span>
 				<span class="flare flare-2"></span>
 				<span class="flare flare-3"></span>
 			</div>
             <div class="hero-intro">
-                <h1>Masz firme na Dolnym Slasku lub w dowolnym miejscu w Polsce? Zrobie Ci strone, ktora dzwoni i sprzedaje.</h1>
+                <h2>Masz firme na Dolnym Slasku lub w dowolnym miejscu w Polsce? Zrobie Ci strone, ktora dzwoni i sprzedaje.</h2>
                 <p>Zero korporacyjnego slangu. Umawiamy termin, przygotowuje koncept, Ty akceptujesz i strona rusza. Klienci z Dolnego Slaska i reszty kraju wiedza, gdzie dzwonic.</p>
                 <div class="hero-actions">
                     <a class="button primary" href="#contact">Zamow bez gadania</a>
