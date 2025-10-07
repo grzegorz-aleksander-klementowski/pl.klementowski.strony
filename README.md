@@ -1,43 +1,76 @@
-# Strony dla Biznesu – Portfolio Grzegorza Aleksandra klementowskiego
+# Business Websites — Portfolio of Grzegorz Aleksander Klementowski
 
 ![Build Status](https://img.shields.io/badge/ci-pending-lightgrey?label=CI)
 
-Nowoczesne portfolio webdevelopera z Dolnego Śląska, zaprojektowane, aby natychmiast pokazać strategię, projektowanie i kodowanie w jednym doświadczeniu. Hero z sekwencją plan–kod–start, sekcje ofertowe oraz siatka realizacji gotowa na prawdziwe zrzuty ekranów.
+A modern, static portfolio for a web developer from Lower Silesia, designed to show strategy, design, and code in one cohesive experience. The landing section demonstrates a plan → code → launch sequence, followed by clear service sections and a portfolio grid prepared for real screenshots.
 
-## Podgląd
-- Futurystyczne intro z animacjami pokazującymi cały proces budowy strony
-- Sekcja „Co dostajesz” z konkretami dla lokalnych firm i klientów z całej Polski
-- Portfolio 8 projektów — każdy kafelek prowadzi do szczegółów na nowej karcie
-- Mikrointerakcje i smooth scroll, dostosowane do preferencji ruchu użytkownika
+**Live Preview Style**
+- Animated hero illustrates the full website-building process.
+- “What you get” section tailored for local businesses across Poland.
+- Portfolio of 8 projects — each tile opens details in a new tab.
+- Subtle microinteractions and smooth scroll, honoring reduced‑motion preferences.
 
-## Struktura
+## Features
+- Clean, semantic HTML with responsive layout.
+- Progressive enhancements with `IntersectionObserver` and CSS animations.
+- Reduced motion support via `prefers-reduced-motion`.
+- Ready-to-replace portfolio thumbnails and copy.
+- SEO‑friendly structure and metadata hooks.
+
+## Tech Stack
+- HTML5, CSS3, vanilla JavaScript
+- Google Fonts: Poppins, Playfair Display, Manrope, Lato
+- No build step; deploy as static files
+
+## Project Structure
 ```
 .
-├── index.html      # Struktura strony i sekcje
-├── styles.css      # Motyw, animacje, responsywność (Poppins, Playfair, Manrope, Lato)
-├── script.js       # Intersection Observer + sekwencja hero
-└── assets/         # Placeholdery grafik i zdjęcia produktu
+├── index.html      # Page structure and sections
+├── styles.css      # Theme, animations, responsiveness (fonts + variables)
+├── script.js       # Hero sequence + Intersection Observer
+└── assets/         # Image placeholders and media
 ```
 
-## Uruchomienie lokalne
-Wystarczy otworzyć `index.html` w przeglądarce statycznej (np. `file://` lub serwer typu `npx serve`).
+## Quick Start (Local)
+You can open `index.html` directly in your browser, or serve the folder with a lightweight static server to match production behavior (MIME types, caching).
 
 ```bash
 npx serve .
 ```
 
-## Kontrola jakości
-Rekomendowana konfiguracja CI (GitHub Actions) sprawdza HTML, CSS i formatowanie poprzez `htmlhint`, `stylelint` oraz `prettier`.
+Then open the printed URL (e.g., http://localhost:3000).
 
-```
+## Development Notes
+- Animations: Elements opt into on‑scroll animation via the `data-animate` attribute. With reduced motion enabled, content renders fully visible.
+- Hero sequence: The `.hero-landing` section transitions from `prepare` to `play` after page load to ensure a smooth first paint.
+- Accessibility: Meaningful headings, alt text for images, and motion preferences respected. Further ARIA tuning can be added as content becomes final.
+
+## Quality Checks (Optional)
+Recommended tools for CI or local checks:
+
+```bash
 npx htmlhint "**/*.html"
 npx stylelint "**/*.css"
 npx prettier --check "**/*.{html,css,js,json}"
 ```
 
-> ❗ Przygotowane joby wymagają Node 20+ oraz dostępu do rejestru npm.
+Notes:
+- Use Node.js 20+ for consistent CLI behavior.
+- Add corresponding config files (`.htmlhintrc`, `.stylelintrc`, `.prettierrc`) if you want to enforce rules in CI.
 
-## Autor
-Grzegorz Aleksander klementowski — projektowanie serwisów, automatyzacja danych i opieka techniczna dla firm z Dolnego Śląska i całej Polski.
+## Deployment
+This is a static site. You can deploy to any static host (Netlify, GitHub Pages, Cloudflare Pages, your own Nginx/Apache):
+- Upload `index.html`, `styles.css`, `script.js`, and the `assets/` directory.
+- Ensure correct `Content-Type` headers for `.css` and `.js`.
+- Optionally set cache headers for assets; keep HTML with short TTL for content updates.
 
-Kontakt: [storny@klementowski.pl](mailto:storny@klementowski.pl)
+## Browser Support
+- Modern evergreen browsers (Chromium, Firefox, Safari, Edge).
+- Graceful degradation: if `IntersectionObserver` is unavailable or motion is reduced, content shows without animations.
+
+## Contact
+Author: Grzegorz Aleksander Klementowski
+
+Email: [storny@klementowski.pl](mailto:storny@klementowski.pl)
+
+Serving Lower Silesia locally and the whole of Poland remotely.
