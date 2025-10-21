@@ -28,6 +28,7 @@
 
     var promoOverlay = document.querySelector("#promo-overlay");
     var promoClose = promoOverlay ? promoOverlay.querySelector(".promo-close") : null;
+    var promoCta = promoOverlay ? promoOverlay.querySelector(".promo-cta") : null;
     var promoDismissed = false;
 
     var showPromo = function () {
@@ -62,6 +63,10 @@
 
         if (promoClose) {
             promoClose.addEventListener("click", hidePromo);
+        }
+
+        if (promoCta) {
+            promoCta.addEventListener("click", hidePromo);
         }
 
         document.addEventListener("keydown", function (event) {
