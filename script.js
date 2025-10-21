@@ -26,6 +26,51 @@
         }
     }
 
+    var promoOverlay = document.querySelector("#promo-overlay");
+    var promoClose = promoOverlay ? promoOverlay.querySelector(".promo-close") : null;
+    var promoDismissed = false;
+
+    var showPromo = function () {
+        if (!promoOverlay || promoDismissed) {
+            return;
+        }
+        promoOverlay.classList.add("is-active");
+        promoOverlay.setAttribute("aria-hidden", "false");
+        document.body.classList.add("promo-open");
+    };
+
+    var hidePromo = function () {
+        if (!promoOverlay) {
+            return;
+        }
+        promoOverlay.classList.remove("is-active");
+        promoOverlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("promo-open");
+        promoDismissed = true;
+    };
+
+    if (promoOverlay) {
+        window.addEventListener("load", function () {
+            window.setTimeout(showPromo, 500);
+        });
+
+        promoOverlay.addEventListener("click", function (event) {
+            if (event.target === promoOverlay) {
+                hidePromo();
+            }
+        });
+
+        if (promoClose) {
+            promoClose.addEventListener("click", hidePromo);
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                hidePromo();
+            }
+        });
+    }
+
     if (prefersReduced) {
         document.querySelectorAll("[data-animate]").forEach(function (node) {
             node.classList.add("is-visible");
